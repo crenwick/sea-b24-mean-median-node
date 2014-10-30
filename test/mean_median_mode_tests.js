@@ -9,7 +9,7 @@ describe('Mean', function() {
 
 describe('Median', function() {
   it('gets an accurate median', function() {
-    expecct(mmm.median(4,5,6)).to.eql(5);
+    expect(mmm.median(4,5,6)).to.eql(5);
   });
 });
 
