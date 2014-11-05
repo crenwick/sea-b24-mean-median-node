@@ -1,4 +1,4 @@
-sea-b23-mean-median-node
+sea-b24-mean-median-node
 ========================
 
 Submit your Pull Requests to this repository for Mean Median Node homework
