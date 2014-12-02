@@ -33,3 +33,7 @@ workbench.xmi
 
 # Mac OS X junk
 .DS_Store
+build/
+bower_components
+test/test_bundle.js
+.sass-cache/
