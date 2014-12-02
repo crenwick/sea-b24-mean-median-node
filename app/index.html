@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MMM</title>
-</head>
-<body>
-  <h1>Mean, Median, and Mode:</h1>
-  <div data-ng-app="mmmApp">
-    <div data-ng-controller="mmmCtrl">
-      <label>Input:</label>
-      </br>
-      <input type="text" data-ng-model="newInput"/>
-      <button data-ng-click="sendInput()">Calculate</button>
-      </br>
-      </br><p>Mean: {{output.mean}}</br>Median: {{output.median}}</br>Mean: {{output.mode}}</p>
+  <head>
+    <meta charset="UTF-8">
+    <title>MMM</title>
+  </head>
+  <body>
+    <h1>Mean, Median, and Mode:</h1>
+    <div data-ng-app="mmmApp">
+      <div data-ng-controller="mmmCtrl">
+        <form>Input:
+          <input type="text" ng-model="user.input" ng-change="update()"/>
+        </form>
+        </br>
+      <p>Mean: {{output.mean}}</br>
+    Median: {{output.median}}</br>
+  Mode: {{output.mode}}</p>
 <!--
-      <div data-ng-repeat="output in outputs">
-        <p>{{output.mode}}</p>
-      </div>
+<div data-ng-repeat="output in outputs">
+<p>{{output.mode}}</p>
+</div>
 -->
-    </div>
-  </div>
-  <script src="bundle.js"></script>
+</div>
+</div>
+<script src="bundle.js"></script>
 </body>
 </html>
