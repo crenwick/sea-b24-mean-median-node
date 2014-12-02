@@ -5,7 +5,7 @@ var app = express();
 var bodyparser = require('body-parser');
 
 app.use(bodyparser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/build'));
 
 require('./routes/calc')(app);
 

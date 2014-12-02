@@ -19,4 +19,17 @@ describe('test the MMM api', function() {
       done();
     });
   });
+
+  it('should get mmm when posting an input', function(done) {
+    chai.request('http://localhost:3000')
+    .post('/api/calc')
+    .send({input: [3]})
+    .end(function(err, res) {
+      expect(err).to.be.null;
+      expect(res.body.mean).to.eql(3);
+      expect(res.body.median).to.eql(3);
+      expect(res.body.mode).to.eql(3);
+      done();
+    });
+  });
 });
