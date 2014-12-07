@@ -1,4 +1,3 @@
-/* jshint ignore:start */
 'use strict';
 
 module.exports = function(app) {
@@ -26,4 +25,3 @@ module.exports = function(app) {
     };
   }]);
 };
-/* jshint ignore:end */
