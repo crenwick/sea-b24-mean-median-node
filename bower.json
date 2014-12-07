@@ -1,0 +1,17 @@
+{
+  "name": "sea-b24-mean-median-node",
+  "version": "0.0.0",
+  "homepage": "https://github.com/crenwick/sea-b24-mean-median-node",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.4"
+  }
+}
