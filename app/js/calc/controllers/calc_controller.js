@@ -1,27 +1,19 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('mmmCtrl', ['$scope', '$http', function($scope, $http) {
+  app.controller('mmmCtrl', ['$scope', 'MMM', function($scope, MMM) {
+    var mmmCalc = new MMM();
     $scope.user = {};
+    $scope.output = {};
 
     $scope.update = function() {
-      console.log('update:', $scope.user);
       var input = $scope.user.input.split(' ');
       for (var i = 0; i < input.length; i++) {
         input[i] = +input[i];
       }
-      $http({
-        method: 'POST',
-        url: '/api/calc',
-        data: {input: input}
-      })
-      .success(function(data) {
-        console.log(data);
-        $scope.output = data;
-      })
-      .error(function(data) {
-        console.log('err:', data);
-      });
+      $scope.output.mean = mmmCalc.mean(input);
+      $scope.output.median = mmmCalc.median(input);
+      $scope.output.mode = mmmCalc.mode(input);
     };
   }]);
 };
