@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     },
 
     simplemocha: {
-      src: ['test/**/*.js']
+      src: ['test/api/*.js']
     },
 
     clean: {
@@ -84,5 +84,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build:dev', ['clean:dev', 'lint', 'browserify:dev', 'sass', 'copy:dev']);
   grunt.registerTask('test:client', ['browserify:test', 'karma:unit']);
   grunt.registerTask('test', ['lint', 'simplemocha']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default', ['test', 'test:client']);
 };
