@@ -1,6 +1,9 @@
 {
   "globals": {
     "describe"   : false,
+    "expect"     : true,
+    "__dirname"  : false,
+    "process"    : false,
     "it"         : false,
     "to"         : false,
     "ok"         : false,
@@ -10,8 +13,9 @@
     "after"      : false,
     "afterEach"  : false,
     "equal"      : false,
-    "angular": false
+    "angular"    : false
   },
+  "predef": ["angular"],
   "globalstrict": true,
   "quotmark": false,
   "smarttabs": true,

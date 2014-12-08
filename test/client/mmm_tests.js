@@ -32,9 +32,9 @@ describe('mmmCtrl', function() {
 
     it('make a call to mmm API', function() {
       $httpBackend.expectPOST('/api/calc')
-        .respond(200, {'mean': 2.25, 'median': 2.5, 'mode':'3'});
+        .respond(200, {mean: 2.25, median: 2.5, mode:'3'});
       $controllerConstructor('mmmCtrl', {$scope: $scope});
-      $scope.user = {'input': '1 2 3 3'};
+      $scope.user = {input: '1 2 3 3'};
       $scope.update();
       $httpBackend.flush();
 

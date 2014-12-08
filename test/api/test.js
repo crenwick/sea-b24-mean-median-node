@@ -10,9 +10,9 @@ describe('test the MMM api', function() {
   it('should get mmm when posting an input', function(done) {
     chai.request('http://localhost:3000')
     .post('/api/calc')
-    .send({input: [3,4,5,6,6,6,6,4,400]})
+    .send({input: [3, 4, 5, 6, 6, 6, 6, 4, 400]})
     .end(function(err, res) {
-      expect(err).to.be.null;
+      expect(err).to.eql(null);
       expect(res.body.mean).to.eql(48.888888888888886);
       expect(res.body.median).to.eql(6);
       expect(res.body.mode).to.eql(6);
@@ -25,7 +25,7 @@ describe('test the MMM api', function() {
     .post('/api/calc')
     .send({input: [3]})
     .end(function(err, res) {
-      expect(err).to.be.null;
+      expect(err).to.eql(null);
       expect(res.body.mean).to.eql(3);
       expect(res.body.median).to.eql(3);
       expect(res.body.mode).to.eql(3);

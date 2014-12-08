@@ -15,18 +15,18 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      src: ['lib/*.js', 'models/**/*.js', 'server.js', 'routers/**/*.js', 'app/js/**/*.js']
+      src: ['lib/*.js', 'models/**/*.js', 'server.js', 'routers/**/*.js', 'app/js/**/*.js', 'test/api/**/*.js', 'test/client/**/*.js', 'Gruntfile.js']
     },
 
     jscs: {
-      src: ['app/js/**/*.js', 'server.js', 'lib/**/*.js'],
+      src: ['lib/*.js', 'models/**/*.js', 'server.js', 'routers/**/*.js', 'app/js/**/*.js', 'test/api/**/*.js', 'test/client/**/*.js', 'Gruntfile.js'],
       options: {
         config: '.jscsrc'
       }
     },
 
     simplemocha: {
-      src: ['test/api/*.js']
+      src: ['test/api/**/*.js']
     },
 
     clean: {
