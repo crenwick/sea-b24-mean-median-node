@@ -37,3 +37,5 @@ build/
 bower_components
 test/test_bundle.js
 .sass-cache/
+test/angular_testbundle.js
+db/

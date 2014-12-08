@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     jshint: {
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
       },
       test: {
         src: ['test/client/**/*.js'],
-        dest: 'test/test_bundle.js',
+        dest: 'test/angular_testbundle.js',
         options: {
           transform: ['debowerify']
         }
@@ -66,11 +67,22 @@ module.exports = function(grunt) {
           'build/main.css': 'app/sass/main.sass'
         }
       }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.config.js'
+      },
+      continuous: {
+        configFile: 'Karma.config.js',
+        singleRun: true,
+        browsers: ['PhantomJS']
+      }
     }
   });
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('build:dev', ['clean:dev', 'lint', 'browserify:dev', 'sass', 'copy:dev']);
-  grunt.registerTask('build:test', ['browserify:test']);
+  grunt.registerTask('test:client', ['browserify:test', 'karma:unit']);
   grunt.registerTask('test', ['lint', 'simplemocha']);
   grunt.registerTask('default', ['test']);
 };

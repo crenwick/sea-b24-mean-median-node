@@ -5,7 +5,7 @@ module.exports = function(app) {
     $scope.user = {};
 
     $scope.update = function() {
-      console.log('update running!');
+      console.log('update:', $scope.user);
       var input = $scope.user.input.split(' ');
       for (var i = 0; i < input.length; i++) {
         input[i] = +input[i];
@@ -20,7 +20,7 @@ module.exports = function(app) {
         $scope.output = data;
       })
       .error(function(data) {
-        console.log(data);
+        console.log('err:', data);
       });
     };
   }]);
